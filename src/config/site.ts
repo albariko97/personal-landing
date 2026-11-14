@@ -10,6 +10,9 @@ export interface SiteConfig {
     soundcloud?: string;
     youtube?: string;
   };
+  contactForm: {
+    accessKey: string;
+  };
   divingCredentials: {
     agency: string;
     level: string;
@@ -31,6 +34,9 @@ export const siteConfig: SiteConfig = {
     spotify: "https://open.spotify.com",
     soundcloud: "https://soundcloud.com",
     youtube: "https://youtube.com"
+  },
+  contactForm: {
+    accessKey: "305836fb-2d15-4a8d-876f-fcab1d18bdf5",
   },
   divingCredentials: {
     agency: "PADI",
