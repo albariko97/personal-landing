@@ -1,0 +1,39 @@
+---
+import type { Lang } from '../i18n/ui';
+import { getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  currentLang: Lang;
+  class?: string;
+}
+
+const { currentLang, class: className = '' } = Astro.props;
+---
+
+<div class={`inline-flex items-center p-0.5 rounded-lg bg-[#182030] border border-white/10 font-mono text-xs ${className}`}>
+  <!-- English Button -->
+  <a
+    href={getLocalizedPath('en')}
+    class={`px-2.5 py-1 rounded-md transition-all duration-150 ${
+      currentLang === 'en'
+        ? 'bg-blue-600 text-white font-semibold shadow-sm'
+        : 'text-zinc-400 hover:text-zinc-200'
+    }`}
+    aria-label="Switch to English"
+  >
+    EN
+  </a>
+
+  <!-- Spanish Button -->
+  <a
+    href={getLocalizedPath('es')}
+    class={`px-2.5 py-1 rounded-md transition-all duration-150 ${
+      currentLang === 'es'
+        ? 'bg-blue-600 text-white font-semibold shadow-sm'
+        : 'text-zinc-400 hover:text-zinc-200'
+    }`}
+    aria-label="Cambiar a Español"
+  >
+    ES
+  </a>
+</div>

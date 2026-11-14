@@ -7,6 +7,7 @@ status: "Production"
 repoUrl: "https://github.com/alvaroyepes97"
 demoUrl: "https://github.com/alvaroyepes97"
 featured: true
+lang: "en"
 ---
 
 Residential homeowners' assemblies in Colombia require meticulous, legally-defensible minutes covering voting results, quorum counts, budget approvals, and council decisions.

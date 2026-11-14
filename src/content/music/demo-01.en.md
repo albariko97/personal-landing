@@ -10,6 +10,7 @@ links:
   soundcloud: "https://soundcloud.com"
   youtube: "https://youtube.com"
 featured: true
+lang: "en"
 ---
 
 A piece composed and tracked in my home studio setup, applying principles from my minor in Music Recording Techniques at Universidad de los Andes.

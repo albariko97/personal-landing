@@ -1,9 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
 import SectionHeader from './SectionHeader.astro';
 import MusicCard from './MusicCard.astro';
 
-const tracks = (await getCollection('music')).sort(
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const tracks = (await getCollection('music', (entry) => entry.data.lang === lang)).sort(
   (a, b) => new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime()
 );
 ---
@@ -11,9 +20,9 @@ const tracks = (await getCollection('music')).sort(
 <section id="music" class="py-20 md:py-28 border-b border-white/[0.06]">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <SectionHeader
-      index="03 // MUSIC & PRODUCTION"
-      title="Sound Engineering, Composition & Releases"
-      description="Applying acoustic principles, gain staging, and analog-modeled mix techniques to original recorded tracks."
+      index={t('music.index')}
+      title={t('music.title')}
+      description={t('music.desc')}
     />
 
     <div class="space-y-6">

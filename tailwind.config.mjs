@@ -5,26 +5,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#09090B',
+        background: '#0B0F17',
         surface: {
-          DEFAULT: '#111114',
-          hover: '#16161B',
-          muted: '#18181D',
+          DEFAULT: '#131823',
+          hover: '#182030',
+          muted: '#1B2334',
         },
         border: {
           subtle: 'rgba(255, 255, 255, 0.08)',
-          hover: 'rgba(255, 255, 255, 0.20)',
-          accent: 'rgba(59, 130, 246, 0.40)',
+          hover: 'rgba(255, 255, 255, 0.18)',
+          accent: 'rgba(59, 130, 246, 0.35)',
         },
         accent: {
           DEFAULT: '#3B82F6',
           hover: '#60A5FA',
           subtle: 'rgba(59, 130, 246, 0.12)',
         },
+        ocean: {
+          DEFAULT: '#0EA5E9',
+          hover: '#38BDF8',
+          subtle: 'rgba(14, 165, 233, 0.12)',
+          border: 'rgba(14, 165, 233, 0.3)',
+        },
         content: {
-          primary: '#F4F4F5',
-          secondary: '#A1A1AA',
-          tertiary: '#71717A',
+          primary: '#E8EDF5',
+          secondary: '#94A3B8',
+          tertiary: '#64748B',
         }
       },
       fontFamily: {

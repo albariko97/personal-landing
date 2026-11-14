@@ -6,42 +6,42 @@
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
-    background-color: #09090B;
-    color: #F4F4F5;
+    background-color: #0B0F17;
+    color: #E8EDF5;
   }
 
   body {
     min-height: 100vh;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #09090B;
-    color: #F4F4F5;
+    background-color: #0B0F17;
+    color: #E8EDF5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
-  /* Custom modern subtle scrollbar */
+  /* Custom comfortable midnight scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #09090B;
+    background: #0B0F17;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #27272A;
+    background: #1E293B;
     border-radius: 4px;
-    border: 2px solid #09090B;
+    border: 2px solid #0B0F17;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #3F3F46;
+    background: #334155;
   }
 
   ::selection {
-    background: rgba(59, 130, 246, 0.25);
+    background: rgba(59, 130, 246, 0.28);
     color: #93C5FD;
   }
 }
@@ -52,17 +52,28 @@
   }
 
   .subtle-border-hover:hover {
-    border-color: rgba(255, 255, 255, 0.20);
+    border-color: rgba(255, 255, 255, 0.18);
   }
 
   .editorial-card {
-    background-color: #111114;
+    background-color: #131823;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .editorial-card:hover {
-    border-color: rgba(255, 255, 255, 0.20);
-    background-color: #141418;
+    border-color: rgba(255, 255, 255, 0.18);
+    background-color: #182030;
+  }
+
+  .ocean-card {
+    background: linear-gradient(180deg, #131823 0%, #101B2B 100%);
+    border: 1px solid rgba(14, 165, 233, 0.18);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ocean-card:hover {
+    border-color: rgba(14, 165, 233, 0.35);
+    background: linear-gradient(180deg, #162030 0%, #132238 100%);
   }
 }

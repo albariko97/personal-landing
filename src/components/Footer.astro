@@ -1,29 +1,37 @@
 ---
 import { siteConfig } from '../config/site';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
 import CopyEmailButton from './CopyEmailButton.astro';
 
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
-<footer id="contact" class="py-20 md:py-24 bg-[#09090B]">
+<footer id="contact" class="py-20 md:py-24 bg-[#0B0F17]">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="p-8 sm:p-12 rounded-2xl bg-[#111114] border border-white/[0.08] relative overflow-hidden">
+    <div class="p-8 sm:p-12 rounded-2xl bg-[#131823] border border-white/[0.08] relative overflow-hidden">
       <!-- Background subtle glow decoration -->
       <div class="absolute -top-24 -right-24 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 max-w-2xl">
         <div class="inline-flex items-center gap-2 mb-4">
-          <span class="font-mono text-xs font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded">
-            04 // INITIATE CONTACT
+          <span class="font-mono text-xs font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded">
+            {t('contact.index')}
           </span>
         </div>
 
         <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-zinc-100">
-          Let’s build resilient platforms and creative tools together.
+          {t('contact.title')}
         </h2>
 
         <p class="mt-4 text-sm sm:text-base text-zinc-400 leading-relaxed">
-          Open to platform engineering architecture advisory, AI tooling collaborations, or discussing music production and audio engineering.
+          {t('contact.desc')}
         </p>
 
         <!-- Action Buttons -->
@@ -36,7 +44,7 @@ const currentYear = new Date().getFullYear();
               <rect width="20" height="16" x="2" y="4" rx="2"></rect>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
             </svg>
-            <span>Send Direct Message</span>
+            <span>{t('contact.sendMsg')}</span>
           </a>
 
           <CopyEmailButton showAddress={true} class="py-2.5 px-4 text-xs sm:text-sm" />
@@ -87,7 +95,7 @@ const currentYear = new Date().getFullYear();
           </div>
 
           <p class="font-mono text-xs text-zinc-500">
-            © {currentYear} {siteConfig.name}. All rights reserved.
+            © {currentYear} {siteConfig.name}. {t('contact.rights')}
           </p>
         </div>
       </div>

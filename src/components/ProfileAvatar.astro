@@ -1,0 +1,47 @@
+---
+interface Props {
+  class?: string;
+  alt?: string;
+}
+
+const {
+  class: className = '',
+  alt = 'Álvaro Yepes Bonilla — Full Stack & Platform Engineer',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const profilePath = `${base}/images/profile.jpg`;
+---
+
+<div class={`relative group ${className}`}>
+  <!-- Outer subtle gradient ring -->
+  <div class="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl p-1 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-xl">
+    <!-- Inner container -->
+    <div class="w-full h-full rounded-xl overflow-hidden bg-[#131823] border border-white/10 flex items-center justify-center relative">
+      <!-- Fallback SVG Technical Silhouette -->
+      <div id="avatar-fallback" class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-[#182030] to-[#101520] p-4 text-center select-none">
+        <svg class="w-12 h-12 text-zinc-400 group-hover:text-blue-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
+        </svg>
+        <span class="font-mono text-[10px] tracking-wider text-zinc-400 uppercase font-semibold mt-1.5">AYB</span>
+      </div>
+
+      <!-- Real Image with fallback swap -->
+      <img
+        src={profilePath}
+        alt={alt}
+        class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105 opacity-0"
+        loading="eager"
+        onload="this.classList.remove('opacity-0'); document.getElementById('avatar-fallback')?.classList.add('hidden');"
+        onerror="this.classList.add('hidden'); document.getElementById('avatar-fallback')?.classList.remove('hidden');"
+      />
+    </div>
+
+    <!-- Active Indicator Pill -->
+    <div class="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full bg-[#131823] border border-white/15 flex items-center gap-1.5 shadow-md">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-mono text-[10px] font-medium text-zinc-300">Active</span>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ const aiCollection = defineCollection({
     repoUrl: z.string().url().optional(),
     demoUrl: z.string().url().optional(),
     featured: z.boolean().default(false),
+    lang: z.enum(['en', 'es']).default('en'),
   }),
 });
 
@@ -25,6 +26,7 @@ const toolsCollection = defineCollection({
     repoUrl: z.string().url().optional(),
     liveUrl: z.string().url().optional(),
     featured: z.boolean().default(false),
+    lang: z.enum(['en', 'es']).default('en'),
   }),
 });
 
@@ -44,6 +46,25 @@ const musicCollection = defineCollection({
       appleMusic: z.string().url().optional(),
     }),
     featured: z.boolean().default(false),
+    lang: z.enum(['en', 'es']).default('en'),
+  }),
+});
+
+const divingCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    location: z.string(),
+    certification: z.string().default('PADI Open Water Diver'),
+    date: z.string(),
+    maxDepth: z.string(),
+    visibility: z.string().optional(),
+    waterTemp: z.string().optional(),
+    highlights: z.array(z.string()),
+    description: z.string(),
+    image: z.string().optional(),
+    featured: z.boolean().default(false),
+    lang: z.enum(['en', 'es']).default('en'),
   }),
 });
 
@@ -51,4 +72,5 @@ export const collections = {
   ai: aiCollection,
   tools: toolsCollection,
   music: musicCollection,
+  diving: divingCollection,
 };

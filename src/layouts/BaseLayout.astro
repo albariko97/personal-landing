@@ -1,49 +1,57 @@
 ---
 import { siteConfig } from '../config/site';
+import type { Lang } from '../i18n/ui';
 import '../styles/global.css';
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Lang;
 }
 
 const {
   title = `${siteConfig.name} — Full Stack & Platform Engineer`,
-  description = siteConfig.subheadline,
+  description,
+  lang = 'en',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const enURL = new URL(`${base}/`, Astro.site);
+const esURL = new URL(`${base}/es/`, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang={lang} class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`.replace('//', '/')} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Canonical URL -->
+    <!-- Canonical & Alternate Hreflang URLs -->
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="es" href={esURL} />
+    <link rel="alternate" hreflang="x-default" href={enURL} />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    {description && <meta name="description" content={description} />}
     <meta name="author" content={siteConfig.name} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    {description && <meta property="og:description" content={description} />}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    {description && <meta property="twitter:description" content={description} />}
 
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,7 +61,7 @@ const base = import.meta.env.BASE_URL;
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#09090B] text-[#F4F4F5] antialiased selection:bg-blue-500/20 selection:text-blue-300 min-h-screen flex flex-col">
+  <body class="bg-[#0B0F17] text-[#E8EDF5] antialiased selection:bg-blue-500/25 selection:text-blue-300 min-h-screen flex flex-col">
     <slot />
   </body>
 </html>

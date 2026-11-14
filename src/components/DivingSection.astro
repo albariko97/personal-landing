@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import SectionHeader from './SectionHeader.astro';
+import DiveCard from './DiveCard.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const dives = (await getCollection('diving', (entry) => entry.data.lang === lang)).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<section id="diving" class="py-20 md:py-28 border-b border-white/[0.06] relative">
+  <!-- Subtle ambient oceanic backdrop glow -->
+  <div class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-sky-500/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <SectionHeader
+      index={t('diving.index')}
+      title={t('diving.title')}
+      description={t('diving.desc')}
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {dives.map((dive) => (
+        <DiveCard dive={dive} />
+      ))}
+    </div>
+  </div>
+</section>

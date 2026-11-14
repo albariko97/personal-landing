@@ -7,6 +7,7 @@ tags: ["TypeScript", "Node.js", "MCP", "CLI", "Terraform", "DevOps"]
 repoUrl: "https://github.com/alvaroyepes97"
 liveUrl: "https://github.com/alvaroyepes97"
 featured: true
+lang: "en"
 ---
 
 A collection of developer tools and MCP servers purpose-built to connect AI agent runtimes with enterprise infrastructure environments.

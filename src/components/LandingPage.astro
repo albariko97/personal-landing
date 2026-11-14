@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Hero from './Hero.astro';
+import AboutBento from './AboutBento.astro';
+import AiProjects from './AiProjects.astro';
+import ToolsGrid from './ToolsGrid.astro';
+import MusicSection from './MusicSection.astro';
+import DivingSection from './DivingSection.astro';
+import EventsSection from './EventsSection.astro';
+import Footer from './Footer.astro';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${siteConfig.name} — Full Stack & Platform Engineer`}
+  description={t('hero.headline')}
+>
+  <Navbar lang={lang} />
+  <main class="flex-1">
+    <Hero lang={lang} />
+    <AboutBento lang={lang} />
+    <AiProjects lang={lang} />
+    <ToolsGrid lang={lang} />
+    <MusicSection lang={lang} />
+    <DivingSection lang={lang} />
+    <EventsSection lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

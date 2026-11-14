@@ -7,6 +7,7 @@ status: "Research"
 repoUrl: "https://github.com/alvaroyepes97"
 demoUrl: "https://github.com/alvaroyepes97"
 featured: true
+lang: "en"
 ---
 
 RAItmo was my dual degree engineering thesis bridging Systems Engineering, Data Science, and Music Theory. The project explored how recurrent neural networks (specifically LSTM-based Improv RNN architectures from Google Magenta) can generate coherent melodic improvisation over arbitrary harmonic progressions.
