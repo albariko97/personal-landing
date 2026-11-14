@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeader from './SectionHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+
+const aiProjects = (await getCollection('ai')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<section id="ai" class="py-20 md:py-28 border-b border-white/[0.06]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeader
+      index="01 // AI PROJECTS"
+      title="Applied Machine Learning & Generative Systems"
+      description="From deep learning melody synthesis models to real-world multi-pass LLM document pipelines."
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {aiProjects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </div>
+</section>

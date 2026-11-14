@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://albariko97.github.io/personal-landing/sitemap-index.xml
