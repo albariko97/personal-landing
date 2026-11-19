@@ -1,18 +1,19 @@
 ---
-title: "RAItmo — Compositor de Melodías con Deep Learning"
-description: "Tesis de grado en ingeniería investigando modelos generativos de deep learning (Improv RNN / Magenta) para sintetizar melodías originales condicionadas a progresiones armónicas de acordes."
+title: "Generador de Melodías de Reggaetón — Google Magenta Improv RNN"
+description: "Investigación en aprendizaje profundo generativo usando la arquitectura Improv RNN de Google Magenta para componer melodías sincopadas condicionadas a progresiones armónicas urbanas."
 date: "2020-11-20"
-tags: ["Python", "TensorFlow", "Magenta", "Improv RNN", "Music Information Retrieval"]
+tags: ["Python", "TensorFlow", "Google Magenta", "Improv RNN", "Music Information Retrieval", "Reggaetón"]
 status: "Research"
 repoUrl: "https://github.com/alvaroyepes97"
-demoUrl: "https://github.com/alvaroyepes97"
+articleUrl: "https://alvaroyepes97.medium.com/melody-generator-for-reggaeton-music-2ba75eb1d563"
 featured: true
 lang: "es"
 ---
 
-RAItmo fue mi tesis de doble titulación que unió la Ingeniería de Sistemas, la Ciencia de Datos y la Teoría Musical. El proyecto investigó cómo las redes neuronales recurrentes (específicamente arquitecturas Improv RNN basadas en LSTM de Google Magenta) pueden generar improvisaciones melódicas coherentes sobre secuencias armónicas arbitrarias.
+Investigación publicada explorando cómo las redes neuronales recurrentes (específicamente la arquitectura Improv RNN basada en LSTM de Google Magenta) pueden generar improvisaciones melódicas coherentes sobre progresiones armónicas de música urbana y reggaetón.
 
-### Puntos Destacados
-- **Condicionamiento Armónico:** Entrada de tablas de acordes al modelo para restringir el espacio de notas a alturas tonalmente consistentes.
-- **Preprocesamiento de Datos:** Construcción de pipelines en Python para extraer, cuantizar y vectorizar pares de melodía-acorde en tensores de entrenamiento.
-- **Evaluación Musical:** Medición de entropía melódica, variabilidad rítmica y distribución de tonos frente a composiciones de referencia humanas.
+### Aspectos Destacados
+- **Dataset Curado:** Construcción de un conjunto de datos personalizado a partir de pistas MIDI de reggaetón y música urbana latina, extrayendo líneas melódicas alineadas a cifrados armónicos.
+- **Pipeline con Protocol Buffers:** Conversión de archivos MIDI a estructuras `NoteSequence` de Magenta serializadas en formato `TFRecord` para un entrenamiento eficiente en TensorFlow.
+- **Condicionamiento Armónico:** Alimentación de progresiones de acordes como señales continuas de condicionamiento para garantizar que las melodías sincopadas generadas mantengan coherencia tonal.
+- **Publicación:** Metodología completa, muestras de audio y análisis del modelo publicados en [Medium](https://alvaroyepes97.medium.com/melody-generator-for-reggaeton-music-2ba75eb1d563).

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { project, lang = 'en' } = Astro.props;
-const { title, description, tags, status, repoUrl, demoUrl } = project.data;
+const { title, description, tags, status, repoUrl, demoUrl, articleUrl } = project.data;
 const t = useTranslations(lang);
 
 const statusStyles = {
@@ -54,7 +54,7 @@ const statusStyles = {
     </div>
 
     <!-- Links -->
-    <div class="flex items-center gap-3 pt-1">
+    <div class="flex flex-wrap items-center gap-3 pt-1">
       {repoUrl && (
         <a
           href={repoUrl}
@@ -67,6 +67,20 @@ const statusStyles = {
           </svg>
           {t('card.source')}
           <span class="text-zinc-500 group-hover:translate-x-0.5 transition-transform">→</span>
+        </a>
+      )}
+      {articleUrl && (
+        <a
+          href={articleUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-amber-300/90 hover:text-amber-200 transition-colors bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md"
+        >
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          </svg>
+          {t('card.article')}
+          <span>↗</span>
         </a>
       )}
       {demoUrl && (

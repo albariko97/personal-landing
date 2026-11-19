@@ -28,6 +28,26 @@ const dives = (await getCollection('diving', (entry) => entry.data.lang === lang
       description={t('diving.desc')}
     />
 
+    <!-- Verified PADI Diving Metrics Banner -->
+    <div class="mb-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="p-4 sm:p-5 rounded-xl bg-[#0F1726]/80 border border-sky-500/20 text-center">
+        <span class="block text-2xl sm:text-3xl font-bold font-mono text-sky-400">12</span>
+        <span class="block text-xs font-mono text-zinc-400 mt-1 uppercase tracking-wider">{t('diving.statDives')}</span>
+      </div>
+      <div class="p-4 sm:p-5 rounded-xl bg-[#0F1726]/80 border border-sky-500/20 text-center">
+        <span class="block text-2xl sm:text-3xl font-bold font-mono text-sky-400">528 <span class="text-sm font-normal text-sky-300/70">min</span></span>
+        <span class="block text-xs font-mono text-zinc-400 mt-1 uppercase tracking-wider">{t('diving.statBottomTime')}</span>
+      </div>
+      <div class="p-4 sm:p-5 rounded-xl bg-[#0F1726]/80 border border-sky-500/20 text-center">
+        <span class="block text-2xl sm:text-3xl font-bold font-mono text-sky-400">4</span>
+        <span class="block text-xs font-mono text-zinc-400 mt-1 uppercase tracking-wider">{t('diving.statRegions')}</span>
+      </div>
+      <div class="p-4 sm:p-5 rounded-xl bg-[#0F1726]/80 border border-sky-500/20 text-center">
+        <span class="block text-sm sm:text-base font-bold font-mono text-sky-300 mt-1">Flynn Reef, AU</span>
+        <span class="block text-xs font-mono text-zinc-400 mt-1 uppercase tracking-wider">{t('diving.statCertSite')}</span>
+      </div>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {dives.map((dive) => (
         <DiveCard dive={dive} />

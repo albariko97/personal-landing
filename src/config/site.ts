@@ -6,6 +6,7 @@ export interface SiteConfig {
   socials: {
     github: string;
     linkedin: string;
+    medium?: string;
     spotify?: string;
     soundcloud?: string;
     youtube?: string;
@@ -16,6 +17,9 @@ export interface SiteConfig {
   divingCredentials: {
     agency: string;
     level: string;
+    certificationSite: string;
+    totalDives: number;
+    totalBottomTime: string;
     maxDepth: string;
     specialties: string[];
   };
@@ -31,6 +35,7 @@ export const siteConfig: SiteConfig = {
   socials: {
     github: "https://github.com/alvaroyepes97",
     linkedin: "https://www.linkedin.com/in/alvaro-alfonso-yepes-bonilla-3033a417a/",
+    medium: "https://alvaroyepes97.medium.com",
     spotify: "https://open.spotify.com",
     soundcloud: "https://soundcloud.com",
     youtube: "https://youtube.com"
@@ -41,8 +46,11 @@ export const siteConfig: SiteConfig = {
   divingCredentials: {
     agency: "PADI",
     level: "Open Water Diver",
+    certificationSite: "Flynn Reef, Great Barrier Reef, Australia",
+    totalDives: 12,
+    totalBottomTime: "528 min",
     maxDepth: "18m / 60ft",
-    specialties: ["Buoyancy Control", "Coral Reef Navigation", "Gas Management"]
+    specialties: ["Buoyancy Control", "Night Diving", "Coral Reef Navigation", "Gas Management"]
   },
   navLinks: [
     { key: "nav.about", href: "#about" },

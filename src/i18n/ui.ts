@@ -69,11 +69,16 @@ export const ui = {
     'ai.desc': 'From deep learning melody synthesis models to real-world multi-pass LLM document pipelines.',
     'card.source': 'Source',
     'card.explore': 'Explore',
+    'card.article': 'Read Article',
 
     // Section 02: Tools
     'tools.index': '02 // TOOLS & OPEN SOURCE',
     'tools.title': 'Developer Tooling & Platform Utilities',
     'tools.desc': 'Command-line interfaces, Model Context Protocol servers, and cloud engineering utilities built for speed.',
+    'tools.roadmapBadge': 'ROADMAP // IN DEVELOPMENT',
+    'tools.roadmapTitle': 'Upcoming Open Source Tooling & Apple Watch Ultra Dive Computer',
+    'tools.roadmapDesc': 'Future open-source projects currently in the pipeline, including an open-source dive computer for the Apple Watch Ultra (Swift, watchOS, and Bühlmann ZHL-16C decompression algorithms) and cloud platform utilities. Follow my GitHub for repository drops.',
+    'tools.roadmapFollow': 'Follow on GitHub',
     'card.repo': 'Repository',
     'card.live': 'Documentation / Live',
 
@@ -81,6 +86,7 @@ export const ui = {
     'music.index': '03 // MUSIC & PRODUCTION',
     'music.title': 'Sound Engineering, Composition & Releases',
     'music.desc': 'Applying acoustic principles, gain staging, and analog-modeled mix techniques to original recorded tracks.',
+    'music.streamCta': 'Stream Single',
 
     // Section 04: Diving
     'diving.index': '04 // SCUBA DIVING & EXPEDITIONS',
@@ -89,6 +95,10 @@ export const ui = {
     'diving.badge': 'PADI Certified',
     'diving.depthLabel': 'Max Depth',
     'diving.logLabel': 'Field Notes',
+    'diving.statDives': 'Logged Dives',
+    'diving.statBottomTime': 'Bottom Time',
+    'diving.statRegions': 'Global Regions',
+    'diving.statCertSite': 'Certified Site',
 
     // Section 05: Events
     'events.index': '05 // EVENTS & TALKS',
@@ -192,11 +202,16 @@ export const ui = {
     'ai.desc': 'Desde modelos de deep learning para síntesis melódica hasta pipelines de LLMs para procesamiento de documentos de alta precisión.',
     'card.source': 'Código Fuente',
     'card.explore': 'Explorar',
+    'card.article': 'Leer Artículo',
 
     // Section 02: Tools
     'tools.index': '02 // HERRAMIENTAS & OPEN SOURCE',
     'tools.title': 'Herramientas para Desarrolladores y Cloud',
     'tools.desc': 'Herramientas de línea de comandos (CLI), servidores MCP y utilidades de ingeniería en la nube construidas para acelerar flujos técnicos.',
+    'tools.roadmapBadge': 'HOJA DE RUTA // EN DESARROLLO',
+    'tools.roadmapTitle': 'Próximas Herramientas Open Source & Dive Computer para Apple Watch Ultra',
+    'tools.roadmapDesc': 'Proyectos de código abierto en desarrollo, incluyendo una computadora de buceo open source para Apple Watch Ultra (Swift, watchOS y algoritmos de descompresión Bühlmann ZHL-16C) junto con utilidades de ingeniería cloud. Sigue mi perfil en GitHub para los primeros lanzamientos.',
+    'tools.roadmapFollow': 'Seguir en GitHub',
     'card.repo': 'Repositorio',
     'card.live': 'Documentación / En vivo',
 
@@ -204,6 +219,7 @@ export const ui = {
     'music.index': '03 // MÚSICA & PRODUCCIÓN',
     'music.title': 'Ingeniería de Audio, Composición y Lanzamientos',
     'music.desc': 'Aplicación de fundamentos acústicos, estructura de ganancia y técnicas de mezcla analógica en grabaciones originales.',
+    'music.streamCta': 'Escuchar Sencillo',
 
     // Section 04: Diving
     'diving.index': '04 // BUCEO SCUBA & EXPEDICIONES',
@@ -212,6 +228,10 @@ export const ui = {
     'diving.badge': 'Certificado PADI',
     'diving.depthLabel': 'Profundidad Máx',
     'diving.logLabel': 'Notas de Campo',
+    'diving.statDives': 'Inmersiones Registradas',
+    'diving.statBottomTime': 'Tiempo de Fondo',
+    'diving.statRegions': 'Regiones Globales',
+    'diving.statCertSite': 'Sitio Certificación',
 
     // Section 05: Events
     'events.index': '05 // EVENTOS & CHARLAS',

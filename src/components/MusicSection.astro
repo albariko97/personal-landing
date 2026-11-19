@@ -27,7 +27,7 @@ const tracks = (await getCollection('music', (entry) => entry.data.lang === lang
 
     <div class="space-y-6">
       {tracks.map((track) => (
-        <MusicCard track={track} />
+        <MusicCard track={track} lang={lang} />
       ))}
     </div>
   </div>

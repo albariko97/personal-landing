@@ -75,27 +75,44 @@ const currentYear = new Date().getFullYear();
               >
                 GitHub ↗
               </a>
-              <span class="text-zinc-700">•</span>
-              {siteConfig.socials.spotify && (
-                <a
-                  href={siteConfig.socials.spotify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-zinc-100 transition-colors"
-                >
-                  Spotify ↗
-                </a>
+              {siteConfig.socials.medium && (
+                <>
+                  <span class="text-zinc-700">•</span>
+                  <a
+                    href={siteConfig.socials.medium}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-zinc-100 transition-colors"
+                  >
+                    Medium ↗
+                  </a>
+                </>
               )}
-              <span class="text-zinc-700">•</span>
+              {siteConfig.socials.spotify && (
+                <>
+                  <span class="text-zinc-700">•</span>
+                  <a
+                    href={siteConfig.socials.spotify}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-zinc-100 transition-colors"
+                  >
+                    Spotify ↗
+                  </a>
+                </>
+              )}
               {siteConfig.socials.soundcloud && (
-                <a
-                  href={siteConfig.socials.soundcloud}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-zinc-100 transition-colors"
-                >
-                  SoundCloud ↗
-                </a>
+                <>
+                  <span class="text-zinc-700">•</span>
+                  <a
+                    href={siteConfig.socials.soundcloud}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-zinc-100 transition-colors"
+                  >
+                    SoundCloud ↗
+                  </a>
+                </>
               )}
             </div>
 
